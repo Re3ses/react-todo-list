@@ -23,10 +23,10 @@ function TodoForm({ addTodo }) {
 
     return (
         <form onSubmit={handleSubmit}
-            className="flex justify-center align-center gap-2"
+            className="flex justify-center align-center gap-3    w-full mb-4"
         >
             <input
-                className="w-2/3 p-1 border-2 border-gray-400 rounded"
+                className="w-96 border-b-2 border-gray-400 rounded ml-6 px-3"
                 name="task"
                 type="test"
                 value={todo.task}
@@ -34,7 +34,7 @@ function TodoForm({ addTodo }) {
                 placeholder="Add Task.."
             />
             <button
-                className="font-medium text-3xl text-gray-800"
+                className="font-medium pt-[.15rem] text-2xl text-gray-800 h-10 flex flex-col items-center"
                 type="submit">+</button>
         </form >
     )

@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    console.log('storageTodos:', storageTodos);
+    // console.log('storageTodos:', storageTodos);
     if (storageTodos != null) {
       setTodos(storageTodos);
     }
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-    console.log('todos:', todos);
+    // console.log('todos:', todos);
   }, [todos]);
 
   function addTodo(todo) {
@@ -47,17 +47,16 @@ function App() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen w-full">
-      <div className="flex flex-col">
-        <h1 className="text-7xl text-gray-800 font-light font-Roboto">ReactJs Todo</h1>
-        <div className='mx-5 my-3 flex flex-col justify-center'>
-          <TodoForm addTodo={addTodo} />
-          <TodoList
-            todos={todos}
-            toggleComplete={toggleComplete}
-            removeTodo={removeTodo} />
-        </div>
-      </div>
+    <div className="flex flex-col justify-center items-center h-screen w-full px-5">
+      <h1 className="text-5xl md:text-7xl lg:text-8xl text-gray-800 font-light font-Roboto text-center mb-8">ReactJs Todo</h1>
+      {/* <div> */}
+      <TodoForm addTodo={addTodo} />
+      <TodoList
+        todos={todos}
+        toggleComplete={toggleComplete}
+        removeTodo={removeTodo}
+      />
+      {/* </div> */}
     </div>
   )
 }

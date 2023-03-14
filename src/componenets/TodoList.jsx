@@ -3,7 +3,7 @@ import Todo from "./Todo";
 
 export default function TodoList({ todos, toggleComplete, removeTodo }) {
     return (
-        <ul>
+        <ul className='w-auto h-auto px-5 overflow-auto'>
             {todos.map(todo => (
                 <Todo
                     key={todo.id}

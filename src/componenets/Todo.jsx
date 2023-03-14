@@ -11,19 +11,21 @@ export default function Todo({ todo, toggleComplete, removeTodo }) {
     }
 
     return (
-        <div className="
-          flex gap-3
-        ">
-            <input type="checkbox" onClick={handleCheckBoxClick} defaultChecked={todo.completed} />
+        <div className="flex items-center justify-center gap-2 w-full">
+            <input
+                className="ml-2"
+                type="checkbox" onClick={handleCheckBoxClick} checked={todo.completed} />
             <li
-                className=""
-                style={{
-                    textDecoration: todo.completed ? "line-through" : null
-                }}
+                onClick={handleCheckBoxClick}
+                className={`
+                    w-96 p-3 text-lg font-medium truncate 
+                    ${todo.completed ? 'line-through' : 'no-underline'} 
+                    ${todo.completed ? 'text-[#00000063]' : 'text-black'}
+                    `}
             >
                 {todo.task}
             </li>
-            <button onClick={handleRemoveClick}>x</button>
-        </div>
+            <button className="font-bold text-gray-400" onClick={handleRemoveClick}>x</button>
+        </div >
     )
 }
